@@ -1,0 +1,4 @@
+overrides:
+  core: link:../../../Library/pnpm/global/5/node_modules/@scorm/core
+  scorm: link:../scorm
+  scorm-score: link:../scorm-score

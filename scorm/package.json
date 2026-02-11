@@ -1,0 +1,43 @@
+{
+  "name": "scorm",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./vite": "./dist/vite-plugin.js"
+  },
+  "bin": {
+    "scorm-pack": "dist/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.28.0",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "core": "link:../../../Library/pnpm/global/5/node_modules/@scorm/core",
+    "fs-extra": "^11.3.3",
+    "handlebars": "^4.7.8",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/archiver": "^7.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
