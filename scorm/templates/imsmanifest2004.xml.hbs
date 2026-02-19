@@ -7,7 +7,13 @@
   xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3"
   xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
   xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+    http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+    http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+    http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+    http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
 
   <metadata>
     <schema>ADL SCORM</schema>
@@ -17,6 +23,11 @@
   <organizations default="ORG01">
     <organization identifier="ORG01">
       <title>{{title}}</title>
+
+      <imsss:sequencing>
+        <imsss:controlMode flow="true" choice="true"/>
+      </imsss:sequencing>
+
       <item identifier="ITEM01" identifierref="RES01">
         <title>{{title}}</title>
       </item>
@@ -29,6 +40,8 @@
       type="webcontent"
       adlcp:scormType="sco"
       href="{{launch}}">
+
+      <file href="{{launch}}" />
 
       {{#each files}}
       <file href="{{this}}" />

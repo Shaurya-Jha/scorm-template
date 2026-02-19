@@ -55,7 +55,7 @@ export default function PreAssessment(props: CourseModuleViewProps) {
 }
 
 export function PreAssessmentReport(props: CourseModuleViewProps) {
-  const { assets, next } = props;
+  const { assets, next, complete } = props;
 
   const [selfAssessmentAnswers, setSelfAssessmentAnswers] = useAtom(
     selfAssessmentAnswersAtom
@@ -111,7 +111,10 @@ export function PreAssessmentReport(props: CourseModuleViewProps) {
             </div>
             <button
               // onClick={() => setCurrentModule(currentModule! + 1)}
-              onClick={() => next}
+              onClick={() => {
+                complete();
+                next()
+              }}
               className="bg-blue-600/50 border-2 text-blue-200 font-bold border-blue-400 shadow-xl hover:bg-blue-500/50 shadow-blue-500/20 backdrop-blur-2xl rounded-xl py-2 px-4 flex items-center justify-center mt-4"
             >
               Continue <ArrowRight />

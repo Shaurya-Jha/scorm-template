@@ -67,15 +67,19 @@ async function collectFiles(dir: string, base = dir): Promise<string[]> {
  * Auto-detect launch file
  */
 function detectLaunchFile(files: string[]): string | null {
-  // priority order
-  const candidates = ["index_scorm.html", "index.html"];
-
-  for (const file of candidates) {
-    if (files.includes(file)) return file;
-  }
-
+  if (files.includes("index.html")) return "index.html";
   return null;
 }
+// function detectLaunchFile(files: string[]): string | null {
+//   // priority order
+//   const candidates = ["index_scorm.html", "index.html"];
+
+//   for (const file of candidates) {
+//     if (files.includes(file)) return file;
+//   }
+
+//   return null;
+// }
 
 // import fs from "fs-extra";
 // import Handlebars from "handlebars";
