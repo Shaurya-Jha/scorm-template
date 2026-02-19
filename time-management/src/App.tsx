@@ -1,13 +1,8 @@
-import './App.css';
-// import { scormPlugin } from 'scorm';
+import CoursePlayer from './components/CoursePlayer';
+import { COURSE } from './course';
 
 function App() {
-  return (
-    <>
-      <h1>Welcome to time management</h1>
-      {/*{scormPlugin()}*/}
-    </>
-  )
+  return <CoursePlayer course={COURSE} />
 }
 
 export default App

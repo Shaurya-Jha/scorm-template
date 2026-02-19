@@ -1,17 +1,40 @@
-<manifest identifier="{{id}}" version="{{version}}">
-  <organizations default="ORG">
-    <organization identifier="ORG">
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest
+  identifier="{{id}}"
+  version="1.0"
+  xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
+  xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3"
+  xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+  xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004 4th Edition</schemaversion>
+  </metadata>
+
+  <organizations default="ORG01">
+    <organization identifier="ORG01">
       <title>{{title}}</title>
-      <item identifier="ITEM" identifierref="RES">
+      <item identifier="ITEM01" identifierref="RES01">
         <title>{{title}}</title>
       </item>
     </organization>
   </organizations>
 
   <resources>
-    <resource identifier="RES"
+    <resource
+      identifier="RES01"
       type="webcontent"
+      adlcp:scormType="sco"
       href="{{launch}}">
+
+      {{#each files}}
+      <file href="{{this}}" />
+      {{/each}}
+
     </resource>
   </resources>
+
 </manifest>
